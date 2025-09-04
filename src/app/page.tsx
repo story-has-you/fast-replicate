@@ -1,15 +1,13 @@
 
 /**
  * Home Page
- * Complete landing page with Hero section, tool navigation, 
- * comprehensive SEO content areas, and call-to-action elements
+ * Redesigned as a premium tool workspace page with 100vh first screen
+ * and comprehensive SEO content sections below
  */
 import React from 'react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-import HeroSection from '@/components/shared/hero-section';
-import CategoryNavigation from '@/components/shared/category-navigation';
-import PopularModels from '@/components/shared/popular-models';
+import ToolWorkspace from '@/components/shared/tool-workspace';
 import FeaturesSection from '@/components/shared/features-section';
 import AIFeaturesSection from '@/components/shared/ai-features-section';
 import UseCasesSection from '@/components/shared/use-cases-section';
@@ -23,33 +21,35 @@ const Home: React.FC = () => {
       {/* Header */}
       <Header />
 
-      {/* Hero Section */}
-      <HeroSection />
+      {/* Tool Workspace - 100vh First Screen */}
+      <ToolWorkspace
+        modelTitle="Stable Diffusion XL Image Generation"
+        modelDescription="High-quality AI art creation, generate professional images with a single click"
+        currentCredits={45}
+        totalCredits={100}
+        creditCost={1}
+      />
 
-      {/* Category Navigation */}
-      <CategoryNavigation />
+      {/* SEO Content Sections Below First Screen */}
+      <div className="bg-white">
+        {/* Features Section */}
+        <FeaturesSection />
 
-      {/* Popular Models */}
-      <PopularModels />
+        {/* AI Features and Capabilities */}
+        <AIFeaturesSection />
 
-      {/* Features Section */}
-      <FeaturesSection />
+        {/* Use Cases and Success Stories */}
+        <UseCasesSection />
 
-      {/* SEO Content Sections */}
-      {/* AI Features and Capabilities */}
-      <AIFeaturesSection />
+        {/* Model Comparison and Selection */}
+        <ModelComparisonSection />
 
-      {/* Use Cases and Success Stories */}
-      <UseCasesSection />
+        {/* Technical Advantages and Infrastructure */}
+        <TechAdvantagesSection />
 
-      {/* Model Comparison and Selection */}
-      <ModelComparisonSection />
-
-      {/* Technical Advantages and Infrastructure */}
-      <TechAdvantagesSection />
-
-      {/* Frequently Asked Questions */}
-      <FAQSection />
+        {/* Frequently Asked Questions */}
+        <FAQSection />
+      </div>
 
       {/* Footer */}
       <Footer />

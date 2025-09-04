@@ -20,10 +20,10 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
               Fast Replicate
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 font-medium">
-              一键调用顶级AI模型
+              Access Premium AI Models with One Click
             </p>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              无需API密钥，订阅即用，快速出结果
+              No API keys required. Subscribe and generate amazing results instantly.
             </p>
           </div>
 
