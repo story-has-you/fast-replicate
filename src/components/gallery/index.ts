@@ -9,4 +9,4 @@ export { default as ArtworkDetailModal } from './artwork-detail-modal';
 export { default as GalleryFilters } from './gallery-filters';
 
 // Re-export types for convenience
-export type { FeaturedArtwork, GalleryFilters, ModelType, SortOption } from '@/types/gallery';
+export type { FeaturedArtwork, GalleryFilters as GalleryFiltersType, ModelType, SortOption } from '@/types/gallery';

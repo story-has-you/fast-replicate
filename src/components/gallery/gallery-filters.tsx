@@ -15,14 +15,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ModelType, SortOption, GalleryFilters } from '@/types/gallery';
+import { ModelType, SortOption, VisibilityType, GalleryFilters as GalleryFiltersType } from '@/types/gallery';
 import { cn } from '@/lib/utils';
 
 interface GalleryFiltersProps {
   /** Current filter state */
-  filters: GalleryFilters;
+  filters: GalleryFiltersType;
   /** Callback when filters change */
-  onFiltersChange: (filters: GalleryFilters) => void;
+  onFiltersChange: (filters: GalleryFiltersType) => void;
   /** Total count of artworks (for display) */
   totalCount?: number;
   /** Filtered count of artworks (for display) */
@@ -77,7 +77,7 @@ const GalleryFilters: React.FC<GalleryFiltersProps> = ({
 
   const handleVisibilityToggle = () => {
     // Toggle between showing all and public only
-    const newVisibility = filters.visibility === 'public' ? undefined : 'public';
+    const newVisibility = filters.visibility === VisibilityType.PUBLIC ? undefined : VisibilityType.PUBLIC;
     onFiltersChange({
       ...filters,
       visibility: newVisibility,
@@ -156,7 +156,7 @@ const GalleryFilters: React.FC<GalleryFiltersProps> = ({
         {/* Additional Filters */}
         <div className="flex flex-wrap gap-2">
           <Button
-            variant={filters.visibility === 'public' ? 'default' : 'outline'}
+            variant={filters.visibility === VisibilityType.PUBLIC ? 'default' : 'outline'}
             size="sm"
             onClick={handleVisibilityToggle}
             className="text-xs"
@@ -206,7 +206,7 @@ const GalleryFilters: React.FC<GalleryFiltersProps> = ({
               {modelTypeOptions.find(opt => opt.value === filters.modelType)?.label}
             </Badge>
           )}
-          {filters.visibility === 'public' && (
+          {filters.visibility === VisibilityType.PUBLIC && (
             <Badge variant="secondary" className="text-xs">
               Public Only
             </Badge>
