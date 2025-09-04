@@ -8,7 +8,7 @@ import React from 'react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import ToolWorkspace from '@/components/shared/tool-workspace';
-import FeaturesSection from '@/components/shared/features-section';
+import ModelIntroductionSection from '@/components/shared/model-introduction-section';
 import AIFeaturesSection from '@/components/shared/ai-features-section';
 import UseCasesSection from '@/components/shared/use-cases-section';
 import ModelComparisonSection from '@/components/shared/model-comparison-section';
@@ -30,11 +30,14 @@ const Home: React.FC = () => {
         creditCost={1}
       />
 
-      {/* SEO Content Sections Below First Screen */}
-      <div className="bg-white">
-        {/* Features Section */}
-        <FeaturesSection />
+      {/* Second Screen - Model Introduction (Primary SEO Content) */}
+      <ModelIntroductionSection 
+        modelName="Stable Diffusion XL"
+        modelVersion="1.0"
+      />
 
+      {/* Additional SEO Content Sections */}
+      <div className="bg-white">
         {/* AI Features and Capabilities */}
         <AIFeaturesSection />
 
