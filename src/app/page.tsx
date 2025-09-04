@@ -2,7 +2,8 @@ import {
   CtaSection,
   FeaturesSection,
   HeroSection,
-  ModelCategoriesSection
+  ModelCategoriesSection,
+  ToolSection
 } from "@/components/home";
 import { MainLayout } from "@/components/layout";
 
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
   return (
     <MainLayout>
       <HeroSection />
+      <ToolSection />
       <FeaturesSection />
       <ModelCategoriesSection />
       <CtaSection />
