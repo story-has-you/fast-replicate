@@ -61,7 +61,7 @@
   --accent: oklch(0.92 0 0); /* 强调色浅灰 */
   --accent-foreground: oklch(0.1 0 0); /* 强调色上的深黑文字 */
   --destructive: oklch(0.577 0.245 27.325); /* 保持原有的红色警告色 */
-  --border: oklch(0.9 0 0); /* 浅灰边框 */
+  --border: oklch(0.8 0 0); /* 中等灰度边框，提高对比度 */
   --input: oklch(0.98 0 0); /* 输入框浅色背景 */
   --ring: oklch(0.1 0 0); /* 黑色聚焦环 */
   --chart-1: oklch(0.646 0.222 41.116);
