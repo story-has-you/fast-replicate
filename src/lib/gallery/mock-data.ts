@@ -1,0 +1,295 @@
+/**
+ * Mock data for featured artworks gallery
+ * 精选作品画廊的模拟数据
+ */
+
+import { FeaturedArtwork, ModelType, VisibilityType } from '@/types/gallery';
+
+/**
+ * Sample featured artworks for development and demonstration
+ * 用于开发和演示的示例精选作品
+ */
+export const mockFeaturedArtworks: FeaturedArtwork[] = [
+  {
+    id: 'artwork-001',
+    title: 'Futuristic Cityscape',
+    prompt: 'A stunning cyberpunk cityscape at sunset, neon lights reflecting on wet streets, ultra-detailed, 8K resolution',
+    contentUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=800',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=400',
+    modelType: ModelType.IMAGE,
+    modelName: 'Stable Diffusion XL',
+    likesCount: 42,
+    qualityRating: 9.2,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'sdxl',
+      seed: 12345,
+      steps: 50,
+      cfg_scale: 7.5,
+    },
+    createdAt: new Date('2024-09-01T10:30:00Z'),
+    creator: {
+      id: 'user-001',
+      name: 'Alex Chen',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-002',
+    title: 'Mystical Forest Portrait',
+    prompt: 'A mystical forest with ancient trees, glowing mushrooms, and ethereal light beams, fantasy art style',
+    contentUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=800',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400',
+    modelType: ModelType.IMAGE,
+    modelName: 'Midjourney v6',
+    likesCount: 38,
+    qualityRating: 8.8,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'midjourney',
+      version: '6.0',
+      stylize: 750,
+    },
+    createdAt: new Date('2024-09-01T14:15:00Z'),
+    creator: {
+      id: 'user-002',
+      name: 'Maria Rodriguez',
+      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b637?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-003',
+    title: 'AI-Generated Poetry',
+    prompt: 'Write a haiku about the beauty of artificial intelligence and human creativity collaborating together',
+    contentUrl: '', // Text content stored in description
+    thumbnailUrl: '', // No thumbnail for text
+    modelType: ModelType.TEXT,
+    modelName: 'GPT-4',
+    likesCount: 25,
+    qualityRating: 8.5,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'gpt-4',
+      temperature: 0.7,
+      max_tokens: 100,
+    },
+    createdAt: new Date('2024-09-01T16:45:00Z'),
+    creator: {
+      id: 'user-003',
+      name: 'David Kim',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-004',
+    title: 'Ocean Waves Ambient',
+    prompt: 'Create a relaxing ambient soundscape of ocean waves with subtle seagull calls, 3 minutes duration',
+    contentUrl: 'https://www.soundjay.com/misc/sounds-628.mp3', // Placeholder
+    thumbnailUrl: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=400',
+    modelType: ModelType.AUDIO,
+    modelName: 'MusicGen',
+    likesCount: 31,
+    qualityRating: 8.3,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'musicgen',
+      duration: 180,
+      temperature: 0.6,
+    },
+    createdAt: new Date('2024-09-02T09:20:00Z'),
+    creator: {
+      id: 'user-004',
+      name: 'Sarah Johnson',
+      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-005',
+    title: 'Abstract Digital Art',
+    prompt: 'Abstract digital art with flowing geometric patterns, vibrant colors, minimalist composition',
+    contentUrl: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&h=800',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400&h=400',
+    modelType: ModelType.IMAGE,
+    modelName: 'DALL-E 3',
+    likesCount: 56,
+    qualityRating: 9.1,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'dalle-3',
+      quality: 'hd',
+      style: 'natural',
+    },
+    createdAt: new Date('2024-09-02T11:00:00Z'),
+    creator: {
+      id: 'user-005',
+      name: 'Emma Wilson',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-006',
+    title: 'Space Exploration Story',
+    prompt: 'Write a short science fiction story about discovering an ancient alien artifact on Mars',
+    contentUrl: '', // Text content
+    thumbnailUrl: '', // No thumbnail for text
+    modelType: ModelType.TEXT,
+    modelName: 'Claude 3.5',
+    likesCount: 29,
+    qualityRating: 8.7,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'claude-3-5',
+      temperature: 0.8,
+      max_tokens: 500,
+    },
+    createdAt: new Date('2024-09-02T15:30:00Z'),
+    creator: {
+      id: 'user-006',
+      name: 'Michael Brown',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-007',
+    title: 'Victorian Architecture',
+    prompt: 'Beautiful Victorian house with intricate details, garden setting, golden hour lighting, architectural photography style',
+    contentUrl: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=800',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=400',
+    modelType: ModelType.IMAGE,
+    modelName: 'Stable Diffusion XL',
+    likesCount: 44,
+    qualityRating: 8.9,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'sdxl',
+      seed: 67890,
+      steps: 40,
+      cfg_scale: 8.0,
+    },
+    createdAt: new Date('2024-09-02T18:45:00Z'),
+    creator: {
+      id: 'user-007',
+      name: 'Lisa Zhang',
+      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-008',
+    title: 'Jazz Piano Composition',
+    prompt: 'Generate a smooth jazz piano piece with walking bass line, 2 minutes, relaxed tempo',
+    contentUrl: 'https://www.soundjay.com/misc/sounds-628.mp3', // Placeholder
+    thumbnailUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400',
+    modelType: ModelType.AUDIO,
+    modelName: 'MusicGen',
+    likesCount: 37,
+    qualityRating: 8.6,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'musicgen',
+      duration: 120,
+      genre: 'jazz',
+      tempo: 'relaxed',
+    },
+    createdAt: new Date('2024-09-03T08:15:00Z'),
+    creator: {
+      id: 'user-008',
+      name: 'Robert Taylor',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-009',
+    title: 'Mountain Landscape',
+    prompt: 'Majestic mountain landscape with snow-capped peaks, alpine lake reflection, dramatic sky, photorealistic',
+    contentUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400',
+    modelType: ModelType.IMAGE,
+    modelName: 'Midjourney v6',
+    likesCount: 52,
+    qualityRating: 9.3,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'midjourney',
+      version: '6.0',
+      aspect_ratio: '16:9',
+      stylize: 500,
+    },
+    createdAt: new Date('2024-09-03T12:30:00Z'),
+    creator: {
+      id: 'user-009',
+      name: 'Jennifer Lee',
+      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b637?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-010',
+    title: 'Marketing Copy',
+    prompt: 'Create compelling marketing copy for a sustainable fashion brand targeting young professionals',
+    contentUrl: '', // Text content
+    thumbnailUrl: '', // No thumbnail for text
+    modelType: ModelType.TEXT,
+    modelName: 'GPT-4',
+    likesCount: 18,
+    qualityRating: 8.2,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'gpt-4',
+      temperature: 0.7,
+      max_tokens: 300,
+      tone: 'professional',
+    },
+    createdAt: new Date('2024-09-03T14:00:00Z'),
+    creator: {
+      id: 'user-010',
+      name: 'Kevin Wang',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-011',
+    title: 'Underwater Scene',
+    prompt: 'Vibrant coral reef with tropical fish, crystal clear water, underwater photography style, high detail',
+    contentUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=800',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400',
+    modelType: ModelType.IMAGE,
+    modelName: 'DALL-E 3',
+    likesCount: 35,
+    qualityRating: 8.4,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'dalle-3',
+      quality: 'hd',
+      style: 'vivid',
+    },
+    createdAt: new Date('2024-09-03T16:20:00Z'),
+    creator: {
+      id: 'user-011',
+      name: 'Amy Liu',
+      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+  {
+    id: 'artwork-012',
+    title: 'Electronic Dance Track',
+    prompt: 'Upbeat electronic dance music with synthesizer melodies, driving beat, 3 minutes duration',
+    contentUrl: 'https://www.soundjay.com/misc/sounds-628.mp3', // Placeholder
+    thumbnailUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400',
+    modelType: ModelType.AUDIO,
+    modelName: 'MusicGen',
+    likesCount: 41,
+    qualityRating: 8.1,
+    visibility: VisibilityType.PUBLIC,
+    generationParams: {
+      model: 'musicgen',
+      duration: 180,
+      genre: 'electronic',
+      tempo: 'fast',
+    },
+    createdAt: new Date('2024-09-03T19:45:00Z'),
+    creator: {
+      id: 'user-012',
+      name: 'Chris Anderson',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+    },
+  },
+];

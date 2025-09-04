@@ -9,6 +9,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import ToolWorkspace from '@/components/shared/tool-workspace';
 import ModelIntroductionSection from '@/components/shared/model-introduction-section';
+import { FeaturedGallery } from '@/components/gallery';
 import AIFeaturesSection from '@/components/shared/ai-features-section';
 import UseCasesSection from '@/components/shared/use-cases-section';
 import ModelComparisonSection from '@/components/shared/model-comparison-section';
@@ -35,6 +36,9 @@ const Home: React.FC = () => {
         modelName="Stable Diffusion XL"
         modelVersion="1.0"
       />
+
+      {/* Third Screen - Featured Gallery */}
+      <FeaturedGallery />
 
       {/* Additional SEO Content Sections */}
       <div className="bg-white">
