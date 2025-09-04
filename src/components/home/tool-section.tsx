@@ -1,23 +1,25 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+"use client";
+
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { getAvailableModels } from '@/lib/mock-models';
+import { AIModel, ModelResult } from '@/types/ai-models';
+import {
+  Eye,
+  HelpCircle,
+  Settings,
+  Sparkles,
+  TrendingUp,
+  Users,
+  Zap
+} from 'lucide-react';
+import React from 'react';
 import ModelSelector from './model-selector';
 import ParameterForm from './parameter-form';
 import ResultDisplay from './result-display';
 import UsageGuide from './usage-guide';
-import { AIModel, ModelResult } from '@/types/ai-models';
-import { getAvailableModels } from '@/lib/mock-models';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  Zap, 
-  Settings, 
-  Eye, 
-  HelpCircle, 
-  Sparkles,
-  Users,
-  TrendingUp
-} from 'lucide-react';
 
 /**
  * Props for ToolSection component
