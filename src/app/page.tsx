@@ -1,7 +1,8 @@
 
 /**
  * Home Page
- * Landing page with Hero, Categories, Popular Models, and Features
+ * Complete landing page with Hero section, tool navigation, 
+ * comprehensive SEO content areas, and call-to-action elements
  */
 import React from 'react';
 import Header from '@/components/layout/header';
@@ -10,6 +11,11 @@ import HeroSection from '@/components/shared/hero-section';
 import CategoryNavigation from '@/components/shared/category-navigation';
 import PopularModels from '@/components/shared/popular-models';
 import FeaturesSection from '@/components/shared/features-section';
+import AIFeaturesSection from '@/components/shared/ai-features-section';
+import UseCasesSection from '@/components/shared/use-cases-section';
+import ModelComparisonSection from '@/components/shared/model-comparison-section';
+import TechAdvantagesSection from '@/components/shared/tech-advantages-section';
+import FAQSection from '@/components/shared/faq-section';
 
 const Home: React.FC = () => {
   return (
@@ -28,6 +34,22 @@ const Home: React.FC = () => {
 
       {/* Features Section */}
       <FeaturesSection />
+
+      {/* SEO Content Sections */}
+      {/* AI Features and Capabilities */}
+      <AIFeaturesSection />
+
+      {/* Use Cases and Success Stories */}
+      <UseCasesSection />
+
+      {/* Model Comparison and Selection */}
+      <ModelComparisonSection />
+
+      {/* Technical Advantages and Infrastructure */}
+      <TechAdvantagesSection />
+
+      {/* Frequently Asked Questions */}
+      <FAQSection />
 
       {/* Footer */}
       <Footer />

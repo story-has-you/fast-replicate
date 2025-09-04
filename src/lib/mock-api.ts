@@ -29,7 +29,7 @@ const generateMockTextOutput = (model: AIModel, inputs: Record<string, string | 
 
 // Mock image URLs (using placeholder images)
 const generateMockImageOutput = (_model: AIModel, inputs: Record<string, string | number | boolean>): string[] => {
-  const size = inputs.size || '1024x1024';
+  const size = (inputs.size as string) || '1024x1024';
   const [width, height] = size.split('x').map(Number);
   
   // Generate mock image URLs using placeholder services
