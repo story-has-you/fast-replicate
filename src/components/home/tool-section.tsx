@@ -72,11 +72,21 @@ const ToolSection: React.FC<ToolSectionProps> = ({ className = '' }) => {
 
     try {
       // Create mock result for demonstration
+      // Convert File objects to strings for serialization
+      const serializedInputs: Record<string, string | number | boolean> = {};
+      Object.entries(parameters).forEach(([key, value]) => {
+        if (value instanceof File) {
+          serializedInputs[key] = value.name; // Store filename instead of File object
+        } else {
+          serializedInputs[key] = value;
+        }
+      });
+
       const mockResult: ModelResult = {
         id: `result-${Date.now()}`,
         modelId: selectedModel.id,
         status: 'processing',
-        inputs: { ...parameters },
+        inputs: serializedInputs,
         createdAt: new Date(),
         creditsUsed: selectedModel.pricing.creditsPerUse
       };

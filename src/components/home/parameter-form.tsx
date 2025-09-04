@@ -81,9 +81,15 @@ const ParameterForm: React.FC<ParameterFormProps> = ({
     let hasErrors = false;
 
     model.parameters.forEach(param => {
-      const error = validateParameter(param, values[param.key]);
-      if (error) {
-        newErrors[param.key] = error;
+      const value = values[param.key];
+      if (value !== undefined) {
+        const error = validateParameter(param, value);
+        if (error) {
+          newErrors[param.key] = error;
+          hasErrors = true;
+        }
+      } else if (param.required) {
+        newErrors[param.key] = `${param.label} is required`;
         hasErrors = true;
       }
     });
@@ -103,7 +109,7 @@ const ParameterForm: React.FC<ParameterFormProps> = ({
       case 'text':
         return (
           <Textarea
-            value={value}
+            value={String(value)}
             onChange={(e) => handleValueChange(param.key, e.target.value)}
             placeholder={param.placeholder}
             className={`min-h-[100px] resize-y ${hasError ? 'border-red-500' : ''}`}
@@ -114,7 +120,7 @@ const ParameterForm: React.FC<ParameterFormProps> = ({
         return (
           <Input
             type="number"
-            value={value}
+            value={String(value)}
             onChange={(e) => handleValueChange(param.key, Number(e.target.value))}
             placeholder={param.placeholder}
             min={param.min}
@@ -128,12 +134,12 @@ const ParameterForm: React.FC<ParameterFormProps> = ({
         return (
           <div className="space-y-3">
             <div className="flex justify-between text-sm text-gray-600">
-              <span>Value: {value}</span>
+              <span>Value: {String(value)}</span>
               <span>{param.min} - {param.max}</span>
             </div>
             <Slider
               value={[Number(value)]}
-              onValueChange={([newValue]) => handleValueChange(param.key, newValue)}
+              onValueChange={([newValue]) => newValue !== undefined && handleValueChange(param.key, newValue)}
               min={param.min}
               max={param.max}
               step={param.step}
@@ -196,7 +202,7 @@ const ParameterForm: React.FC<ParameterFormProps> = ({
         return (
           <Input
             type="text"
-            value={value}
+            value={String(value)}
             onChange={(e) => handleValueChange(param.key, e.target.value)}
             placeholder={param.placeholder}
             className={hasError ? 'border-red-500' : ''}
